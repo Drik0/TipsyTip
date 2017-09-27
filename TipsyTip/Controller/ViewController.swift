@@ -22,6 +22,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func setTipCalculationValue() {
+        tip.tipPercent = Double(tipPercentageSlider.value)
+        tip.billAmount = ((textField.text)! as NSString).doubleValue
+        tip.calculateTip()
+    }
+    
+    func updateUI() {
+        tipLbl.text = String(format: "€0.2f", tip.tipAmount)
+        totalLbl.text = String(format: "€0.2f", tip.tipAmount)
+        tipPercentageLbl.text = "Tip: \(Int(tipPercentageSlider.value * 100))"
+    }
 
     @IBAction func billAmountChanged(_ sender: UITextField) {
         print("My value changed")
