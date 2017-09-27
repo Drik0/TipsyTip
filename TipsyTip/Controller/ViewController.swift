@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTipCalculationValue()
+        updateUI()
     }
     
     func setTipCalculationValue() {
@@ -36,11 +38,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func billAmountChanged(_ sender: UITextField) {
-        print("My value changed")
+        setTipCalculationValue()
+        updateUI()
     }
     
     @IBAction func tipPercentageChanged(_ sender: UISlider) {
-        print(tipPercentageSlider.value)
+        setTipCalculationValue()
+        updateUI()
     }
     
 }
