@@ -31,18 +31,24 @@ class TipModel {
     }
     
     var tipAmount: Double {
-        get {
-            return _tipAmount
-        } set {
-            _tipAmount = newValue
-        }
+        return _tipAmount
     }
     
     var totalAmount: Double {
-        get {
-            return _totalAmount
-        } set {
-            _totalAmount = newValue
-        }
+        return _totalAmount
     }
+    
+    init(billAmount:Double, tipPercent: Double) {
+        self._billAmount = billAmount
+        self._tipPercent = tipPercent
+    }
+
+    func calculateTip() {
+        _tipAmount = billAmount * tipPercent
+        _totalAmount = billAmount + tipAmount
+    }
+
+
 }
+
+
