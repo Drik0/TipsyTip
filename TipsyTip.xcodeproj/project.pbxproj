@@ -54,14 +54,38 @@
 		316B4DB51F7BE3320057693D /* TipsyTip */ = {
 			isa = PBXGroup;
 			children = (
+				316B4DCA1F7BE88C0057693D /* Model */,
+				316B4DC91F7BE86F0057693D /* Controller */,
+				316B4DC81F7BE6330057693D /* View */,
 				316B4DB61F7BE3320057693D /* AppDelegate.swift */,
-				316B4DB81F7BE3320057693D /* ViewController.swift */,
 				316B4DBA1F7BE3320057693D /* Main.storyboard */,
 				316B4DBD1F7BE3320057693D /* Assets.xcassets */,
 				316B4DBF1F7BE3320057693D /* LaunchScreen.storyboard */,
 				316B4DC21F7BE3320057693D /* Info.plist */,
 			);
 			path = TipsyTip;
+			sourceTree = "<group>";
+		};
+		316B4DC81F7BE6330057693D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		316B4DC91F7BE86F0057693D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				316B4DB81F7BE3320057693D /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		316B4DCA1F7BE88C0057693D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
