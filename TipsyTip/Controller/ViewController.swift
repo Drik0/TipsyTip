@@ -19,6 +19,20 @@ class ViewController: UIViewController {
     
     var tip = TipModel(billAmount: 0.0, tipPercent: 0.0)
     
+    @IBAction func billAmountChanged(_ sender: Any) {
+        setTipCalculationValue()
+        updateUI()
+    }
+    
+    @IBAction func tipPercentageChanged(_ sender: UISlider) {
+        let steps: Float = 100
+        let roundedValue = round(sender.value * steps) / steps
+        sender.value = roundedValue
+        
+        setTipCalculationValue()
+        updateUI()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTipCalculationValue()
@@ -32,20 +46,12 @@ class ViewController: UIViewController {
     }
     
     func updateUI() {
-        tipLbl.text = String(format: "€0.2f", tip.tipAmount)
-        totalLbl.text = String(format: "€0.2f", tip.tipAmount)
-        tipPercentageLbl.text = "Tip: \(Int(tipPercentageSlider.value * 100))"
+        tipLbl.text = String(format: "$%0.2f", tip.tipAmount)
+        totalLbl.text = String(format: "$%0.2f", tip.totalAmount)
+        tipPercentageLbl.text = "Tip: \(Int(tipPercentageSlider.value * 100))%"
     }
 
-    @IBAction func billAmountChanged(_ sender: UITextField) {
-        setTipCalculationValue()
-        updateUI()
-    }
     
-    @IBAction func tipPercentageChanged(_ sender: UISlider) {
-        setTipCalculationValue()
-        updateUI()
-    }
     
 }
 

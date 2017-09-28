@@ -38,7 +38,7 @@ class TipModel {
         return _totalAmount
     }
     
-    init(billAmount:Double, tipPercent: Double) {
+    init(billAmount: Double, tipPercent: Double) {
         self._billAmount = billAmount
         self._tipPercent = tipPercent
     }
